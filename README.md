@@ -1,5 +1,8 @@
 ## Nicer: Your JavaScript Code's New Best Friend
 
+![image](https://github.com/DaviesOwonibi/nicer-formatter/assets/75209599/ca421801-da35-4289-af71-2c6c428e647b)
+
+
 Nicer is a JavaScript code formatter designed to make your code more readable, consistent, and aesthetically pleasing. It takes your messy, unformatted code and transforms it into a well-structured masterpiece, following a set of configurable rules.
 
 ### Features
