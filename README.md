@@ -1,6 +1,6 @@
 ## Nicer: Your JavaScript Code's New Best Friend
 
-![image](https://github.com/DaviesOwonibi/nicer-formatter/assets/75209599/a3c7dfb5-003e-428f-8b2f-c359a0e8d47f)
+<h1 style="font-size: 100px; text-align: center; margin: 10px;"> 😁</h1>
 
 Nicer is a JavaScript code formatter designed to make your code more readable, consistent, and aesthetically pleasing. It takes your messy, unformatted code and transforms it into a well-structured masterpiece, following a set of configurable rules.
 
@@ -40,16 +40,18 @@ Once installed, you can use Nicer from the command line or integrate it with you
 **Command Line:**
 
 ```bash
-nices [options] <file>
+nice <file>
 ```
 
 **Example:**
 
 ```bash
-nices my_code.js
+nice my_code.js
 ```
 
-This will format the content of `my_code.js` and print the formatted code to the console.
+```bash
+nice my_code.ts
+```
 
 **Editor Integration:**
 
@@ -63,14 +65,12 @@ Nicer allows you to customize its formatting behavior through a configuration fi
 
 ```json
 {
-  "printWidth": 100,
-  "tabWidth": 2,
-  "semi": false,
-  "trailingComma": "es5"
+ "tabSize": 2,
+ "semicolons": true,
+ "singleQuotes": false,
+ "newlineBraces": false
 }
 ```
-
-These options define the maximum line width, tab size, semicolon usage, and trailing comma behavior.
 
 **More configuration options and details can be found in the Nicer documentation.**
 
@@ -78,10 +78,6 @@ These options define the maximum line width, tab size, semicolon usage, and trai
 
 For more detailed information on Nicer's features, configuration options, and usage examples, please refer to the official documentation:
 
-_Nicer Documentation_ (Add documentation URL here)
-
-For bug reports or feature requests, you can visit the Nicer project on GitHub:
-
-_Nicer GitHub Repository_ (Add Github URL here)
+**_Nicer Documentation_** (Add documentation URL here)
 
 We hope Nicer helps you write cleaner, more maintainable JavaScript code!
