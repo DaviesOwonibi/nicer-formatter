@@ -10,6 +10,7 @@ export type NodeType =
 	| "Declaration"
 	| "VariableDeclaration"
 	| "ReturnExpr"
+	| "ForLoop"
 	| "FunctionDeclaration";
 
 export interface Stmt {
@@ -74,4 +75,10 @@ export interface FunctionDeclaration extends Declaration {
 	name: string;
 	body: Stmt[];
 	params: Identifier[];
+}
+
+export interface ForLoop extends Expr {
+	kind: "ForLoop";
+	params: Stmt[];
+	body: Stmt[];
 }

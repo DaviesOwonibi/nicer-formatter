@@ -19,11 +19,13 @@ export enum TokenType {
 	Public,
 	Const,
 	Return,
+	For,
 
 	// Needed stuff
 	Identifier,
 	DoubleQuote,
 	SingleQuote,
+	Semicolon,
 	Comma,
 	EOF,
 }
@@ -35,6 +37,7 @@ const KEYWORDS: Record<string, TokenType> = {
 	private: TokenType.Private,
 	public: TokenType.Public,
 	return: TokenType.Return,
+	for: TokenType.For,
 };
 
 export interface Token {
@@ -86,7 +89,9 @@ export function tokenize(sourceCode: string): Token[] {
 			src[0] == "-" ||
 			src[0] == "*" ||
 			src[0] == "/" ||
-			src[0] == "%"
+			src[0] == "%" ||
+      src[0] == "<" ||
+      src[0] == ">"
 		) {
 			tokens.push(token(src.shift(), TokenType.BinaryOperator));
 		} else if (src[0] == "=") {
