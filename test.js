@@ -15,3 +15,8 @@ for (let x = 1; x > 2; x + 1) {
 };
 
 add(x, y);
+console.log(y);
+const Person =  {
+  name: "Gojo",
+  age: 21
+};

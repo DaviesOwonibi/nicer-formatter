@@ -1,91 +1,102 @@
 export type NodeType =
-	| "Program"
-	| "NumericLiteral"
-	| "Identifier"
-	| "StringLiteral"
-	| "BinaryExpr"
-	| "CallExpr"
-	| "NullExpr"
-	| "UnaryExpr"
-	| "Declaration"
-	| "VariableDeclaration"
-	| "ReturnExpr"
-	| "ForLoop"
-	| "FunctionDeclaration"
-	| "FunctionCall";
+  | "Program"
+  | "NumericLiteral"
+  | "Identifier"
+  | "StringLiteral"
+  | "BinaryExpr"
+  | "CallExpr"
+  | "NullExpr"
+  | "UnaryExpr"
+  | "Declaration"
+  | "VariableDeclaration"
+  | "ReturnExpr"
+  | "ForLoop"
+  | "FunctionDeclaration"
+  | "FunctionCall"
+  | "ObjectDeclaration";
 
 export interface Stmt {
-	kind: NodeType;
+  kind: NodeType;
 }
 
 export interface Program extends Stmt {
-	kind: "Program";
-	body: Stmt[];
+  kind: "Program";
+  body: Stmt[];
 }
 
 export interface Expr extends Stmt {}
 
 export interface NullExpr extends Expr {
-	kind: "NullExpr";
+  kind: "NullExpr";
 }
 
 export interface Declaration extends Stmt {
-	owner: Stmt;
-	value: Expr;
+  owner: Stmt;
+  value: Expr;
 }
 
 export interface BinaryExpr extends Expr {
-	kind: "BinaryExpr";
-	left: Expr;
-	right: Expr;
-	operator: string;
-	parens: boolean;
+  kind: "BinaryExpr";
+  left: Expr;
+  right: Expr;
+  operator: string;
+  parens: boolean;
 }
 
 export interface ReturnExpr extends Expr {
-	kind: "ReturnExpr";
-	returnValue: Expr;
-	parens: boolean;
+  kind: "ReturnExpr";
+  returnValue: Expr;
+  parens: boolean;
 }
 
 export interface Identifier extends Expr {
-	kind: "Identifier";
-	symbol: string;
+  kind: "Identifier";
+  symbol: string;
 }
 
 export interface StringLiteral extends Expr {
-	kind: "StringLiteral";
-	content: string;
-	singleQuote: boolean;
+  kind: "StringLiteral";
+  content: string;
+  singleQuote: boolean;
 }
 
 export interface NumericLiteral extends Expr {
-	kind: "NumericLiteral";
-	value: number;
+  kind: "NumericLiteral";
+  value: number;
 }
 
 export interface VariableDeclaration extends Declaration {
-	kind: "VariableDeclaration";
-	owner: Stmt;
-	value: Expr;
-	state: number;
+  kind: "VariableDeclaration";
+  owner: Stmt;
+  value: Expr;
+  state: number;
 }
 
 export interface FunctionDeclaration extends Declaration {
-	kind: "FunctionDeclaration";
-	name: string;
-	body: Stmt[];
-	params: Identifier[];
+  kind: "FunctionDeclaration";
+  name: string;
+  body: Stmt[];
+  params: Identifier[];
 }
 
 export interface ForLoop extends Expr {
-	kind: "ForLoop";
-	params: Stmt[];
-	body: Stmt[];
+  kind: "ForLoop";
+  params: Stmt[];
+  body: Stmt[];
 }
 
 export interface FunctionCall extends Expr {
-	kind: "FunctionCall";
-	callee: Identifier;
-	arguments: Expr[];
+  kind: "FunctionCall";
+  callee: Identifier;
+  arguments: Expr[];
+}
+
+export interface Property extends Stmt {
+  key: Identifier;
+  value: Expr;
+}
+
+export interface ObjectDeclaration extends Declaration {
+  kind: "ObjectDeclaration";
+  properties: Property[];
 }
