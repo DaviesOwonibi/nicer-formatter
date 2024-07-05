@@ -15,7 +15,7 @@ import {
 } from "./ast.ts";
 import { tokenize, Token, TokenType } from "./lexer.ts";
 
-export default class JsParser {
+export default class Parser {
   private tokens: Token[] = [];
 
   private not_eof(): boolean {
