@@ -4,31 +4,27 @@
 
 Nicer is a JavaScript code formatter designed to make your code more readable, consistent, and aesthetically pleadsing.
 
+<hr>
+
+### Prequisites
+
+- Deno
+
 ### Installation
 
-There are two main ways to install Nicer:
-
-1. **Node Package Manager (npm):**
-
 ```bash
-npm install nicer-formatter
-```
-
-2. **Yarn:**
-
-```bash
-yarn add nicer-formatter
+git clone https://github.com/DaviesOwonibi/nicer-formatter
 ```
 
 ### Usage
 **Example:**
 
-deno run -A main.ts
+```bash
 deno run -A main.ts my_code.ts
 ```
 
 ### Configuration
-
+```bash
 Nicer allows you to customize its formatting behavior through a configuration file. You can create a `.nicerrc` file in your project's root directory to define your preferences.
 
 **Example Configuration (.nicerrc):**
