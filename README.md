@@ -43,4 +43,5 @@ Nicer allows you to customize its formatting behavior through a configuration fi
 Here's how you can contribute:
 
 Open an issue if you believe you've encountered a bug.
+<br>
 Make a pull request to add new features/make quality-of-life improvements/fix bugs.
