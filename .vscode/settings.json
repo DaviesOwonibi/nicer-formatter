@@ -1,4 +1,6 @@
 {
 	"cSpell.words": ["Skippable"],
-	"deno.enable": true
+	"deno.enable": true,
+	"IDX.aI.enableInlineCompletion": true,
+	"IDX.aI.enableCodebaseIndexing": true
 }
