@@ -7,8 +7,31 @@ export default function formatJsAST(ast: Program, rules: object): string {
 	function formatNode(node: Expr): string {
 		if (rules.hasOwnProperty("semicolons") && rules["semicolons"] == true) {
 			switch (node.kind) {
+				case "FunctionCall":
+					const callee = node.callee.symbol;
+					const functionCallParam = node.arguments;
+					const functionCallParams: string[] = [];
+					let functionCallCount = 0;
+					functionCallParam.forEach((parameter: Expr) => {
+						if (functionCallCount != 0) {
+							if (parameter) {
+								functionCallParams.push(" " + formatNode(parameter));
+							} else {
+								functionCallParams.push("");
+							}
+						} else {
+							if (parameter) {
+								functionCallParams.push(formatNode(parameter));
+							} else {
+								functionCallParams.push("");
+							}
+						}
+						functionCallCount += 1;
+          });
+          
+          return `${callee}(${functionCallParams});`
 				case "ForLoop":
-					const forBody = node.body;
+          const forBody = node.body;
 					const forParam = node.params;
 					const forBodies: string[] = [];
 					const forParams: string[] = [];
@@ -73,7 +96,7 @@ export default function formatJsAST(ast: Program, rules: object): string {
 						forBodies
 							.map((stmt) => `${forTabs}${stmt}`)
 							.join("\n") +
-						`\n};`
+						`\n};\n`
 					);
 				case "BinaryExpr":
 					if (node.isParens) {
