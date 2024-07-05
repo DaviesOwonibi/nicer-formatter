@@ -35,3 +35,12 @@ Nicer allows you to customize its formatting behavior through a configuration fi
  "newlineBraces": false
 }
 ```
+
+### Contributing
+
+<hr>
+
+Here's how you can contribute:
+
+Open an issue if you believe you've encountered a bug.
+Make a pull request to add new features/make quality-of-life improvements/fix bugs.
