@@ -29,6 +29,7 @@ const text = await Deno.readTextFile("./" + file);
 if (jsExtensions.some((ext) => file.endsWith(ext))) {
   const parser = new JsParser();
   const program = parser.produceAST(text);
+  //console.log(program);
   const formattedCode = formatJsAST(program, rules);
   await Deno.writeTextFile("./" + file, formattedCode);
 } else {

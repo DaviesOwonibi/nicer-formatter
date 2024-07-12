@@ -77,6 +77,7 @@ export interface FunctionDeclaration extends Declaration {
   name: string;
   body: Stmt[];
   params: Identifier[];
+  state: number;
 }
 
 export interface ForLoop extends Expr {

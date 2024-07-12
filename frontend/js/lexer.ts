@@ -20,6 +20,8 @@ export enum TokenType {
   Const,
   Return,
   For,
+  Import,
+  From,
 
   // Needed stuff
   Identifier,
@@ -40,6 +42,8 @@ const KEYWORDS: Record<string, TokenType> = {
   public: TokenType.Public,
   return: TokenType.Return,
   for: TokenType.For,
+  import: TokenType.Import,
+  from: TokenType.From,
 };
 
 export interface Token {
@@ -76,7 +80,7 @@ function isSkippable(src: string): boolean {
 export function tokenize(sourceCode: string): Token[] {
   const tokens = new Array<Token>();
   const src = sourceCode.split("");
-
+  // Regular expression patterns for import statements
   while (src.length > 0) {
     if (src[0] == "(") {
       tokens.push(token(src.shift(), TokenType.OpenParen));
